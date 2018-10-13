@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html 
+	xmlns:jsf="http://xmlns.jcp.org/jsf"
+    xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+    xmlns:p="http://primefaces.org/ui" lang="en">
+
+   <h:head>
+
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+    <h:outputStylesheet name="css/main.css" />
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"/>
+  	<link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css"/>
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <title>Gamigo Tracker</title>
+    <!-- Custom styles for this template -->
+    
+  </h:head>
+
+  <h:body>
+
+    <!-- Navigation -->
+    <nav id="banner" class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" >
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <h:graphicImage name="images/logo.png" width="140" height="68" alt=""/>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Overview
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" >Charts</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Statistics</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">API</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+	<div class="container-fluid">
+	<div class="row table-responsive">
+	<h:form>
+	
+	<!-- <h:panelGrid columns="4" cellpadding="5">
+        <h:outputLabel for="name" value="Name:" style="font-weight:bold" />
+        <p:inputText id="name" value="#{viewEmployeesManagedBean.text}" />
+        <p:commandButton value="Submit" update="display" icon="ui-icon-check" />
+        <h:outputText id="display" value="#{viewEmployeesManagedBean.text}" />
+    </h:panelGrid> -->
+    <p:dataTable value="#{viewEmployeesManagedBean.employees}"
+		var="employee" tableStyleClass="table table-striped table-bordered">
+		<p:column>
+			<f:facet name="header">
+				<h:outputText value="Employee ID"></h:outputText>
+			</f:facet>
+			<h:outputText value="#{employee.employeeId}"></h:outputText>
+		</p:column>
+		<p:column>
+			<f:facet name="header">
+				<h:outputText value="Employee Name"></h:outputText>
+			</f:facet>
+			<h:outputText value="#{employee.employeeName}"></h:outputText>
+		</p:column>
+	</p:dataTable>
+	</h:form>
+	</div>
+	</div>
+
+
+
+    <!-- Bootstrap core JavaScript -->
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+   
+   <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+   <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+	
+  </h:body>
+  <h:outputScript type="text/javascript">
+  	$(document).ready(function() {
+    $('#entryTable2').DataTable();
+    $('#entryTable3').DataTable();
+} );
+  </h:outputScript>
+</html>
