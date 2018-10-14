@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html  
+	xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+    xmlns:p="http://primefaces.org/ui" lang="en">
+
+   <h:head>
+
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+    <h:outputStylesheet name="css/main.css" />
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"/>
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <link rel="shortcut icon" type="image/x-icon" href="#{resource['images/favicon.ico']}"/>
+    <title>Downloads Tracker</title>
+    <!-- Custom styles for this template -->
+    
+  </h:head>
+
+  <h:body>
+
+    <!-- Navigation -->
+     <h:form>
+    <nav id="banner" class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" >
+      <div class="container">
+     
+        <a class="navbar-brand" href="#">
+          <h:graphicImage name="images/logo.png" width="140" height="68" alt=""/>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+             <h:commandLink styleClass="nav-link active" action="pretty:panels">Overview
+              <span class="sr-only">(current)</span>
+             </h:commandLink> 
+            </li>
+            <li class="nav-item">
+              <h:commandLink styleClass="nav-link" action="pretty:dashboard">Charts</h:commandLink> 
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Statistics</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">API</a>
+            </li>
+          </ul>
+        </div>
+        
+      </div>
+    </nav>
+    </h:form>
+	<div class="container-fluid">
+	
+    <h:form>	
+    
+		<h3>Panel Integration</h3>
+		<div class="row">
+		 <div class="col">
+		 	<p:panel header="Godfather">
+		            The story begins as Don Vito Corleone, the head of a New York Mafia family, oversees his daughter's wedding.
+		            His beloved son Michael has just come home from the war, but does not intend to become part of his father's business.
+		            Through Michael's life the nature of the family business becomes clear. The business of the family is just like the head of the family,
+		            kind and benevolent to those who give respect, but given to ruthless violence whenever anything stands against the good of the family.
+		        </p:panel>
+		 </div>
+  		<div class="col">
+  			<p:panel header="Godfather">
+		            The story begins as Don Vito Corleone, the head of a New York Mafia family, oversees his daughter's wedding.
+		            His beloved son Michael has just come home from the war, but does not intend to become part of his father's business.
+		            Through Michael's life the nature of the family business becomes clear. The business of the family is just like the head of the family,
+		            kind and benevolent to those who give respect, but given to ruthless violence whenever anything stands against the good of the family.
+		        </p:panel>
+  		</div>
+  		<div class="col">
+  			<p:panel header="Godfather">
+		            The story begins as Don Vito Corleone, the head of a New York Mafia family, oversees his daughter's wedding.
+		            His beloved son Michael has just come home from the war, but does not intend to become part of his father's business.
+		            Through Michael's life the nature of the family business becomes clear. The business of the family is just like the head of the family,
+		            kind and benevolent to those who give respect, but given to ruthless violence whenever anything stands against the good of the family.
+		        </p:panel>
+  		</div>
+  		
+	</div>
+ 
+    </h:form>
+	</div>
+	
+  </h:body>
+</html>

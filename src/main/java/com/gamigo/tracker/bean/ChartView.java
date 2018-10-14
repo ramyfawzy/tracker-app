@@ -9,7 +9,11 @@ import org.primefaces.model.chart.PieChartModel;
 @ManagedBean
 public class ChartView implements Serializable {
  
-    private PieChartModel livePieModel;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 143477534715365019L;
+	private PieChartModel livePieModel;
     
     @PostConstruct
     public void init() {

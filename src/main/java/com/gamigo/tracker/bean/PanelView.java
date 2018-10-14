@@ -12,7 +12,7 @@ import org.primefaces.model.DefaultDashboardModel;
  
 @ManagedBean
 @ViewScoped
-public class DashboardView implements Serializable {
+public class PanelView implements Serializable {
      
     /**
 	 * 
