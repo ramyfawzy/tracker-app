@@ -92,7 +92,7 @@
 					<target>1.8</target>
 				</configuration>
 			</plugin>
-			<plugin>
+			<!-- <plugin>
 				<groupId>org.apache.tomcat.maven</groupId>
 				<artifactId>tomcat7-maven-plugin</artifactId>
 				<version>${tomcat8-maven-plugin.version}</version>
@@ -100,7 +100,7 @@
 					<port>8080</port>
 					<path>/tracker-app</path>
 				</configuration>
-			</plugin>
+			</plugin> -->
 		</plugins>
 		<finalName>${project.artifactId}</finalName>
 	</build>
