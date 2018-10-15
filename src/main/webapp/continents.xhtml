@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html  
+	xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+    xmlns:p="http://primefaces.org/ui" lang="en">
+
+   <h:head>
+
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+    <h:outputStylesheet name="css/main.css" />
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"/>
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <link rel="shortcut icon" type="image/x-icon" href="#{resource['images/favicon.ico']}"/>
+    <title>Downloads Tracker</title>
+    <!-- Custom styles for this template -->
+    
+  </h:head>
+<f:view encoding="UTF-8" contentType="text/html" transient="true">
+  <h:body>
+	<h:form>
+    <!-- Navigation -->
+    <nav id="banner" class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" >
+      <div class="container">
+        <!-- <a class="navbar-brand" href="#">
+          <h:graphicImage name="images/logo.png" width="140" height="68" alt=""/>
+        </a> -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+             <h:commandLink styleClass="nav-link active" action="pretty:panels">Overview
+              <span class="sr-only">(current)</span>
+             </h:commandLink> 
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" >Charts</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Statistics</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">API</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    </h:form>
+	<div class="container-fluid" style="margin-top: 10px;">
+	
+    <h:form>
+        <!-- <p:growl id="msgs" showDetail="true" /> -->
+ 		<h:panelGrid columns="5" >
+        <p:outputLabel for="console1" value="Month" style="font-weight: bold;"/>
+        <p:selectOneMenu id="console1" autoWidth="false" style="padding-right: 0px;width:120px;">
+            <f:selectItem itemLabel="January" itemValue="January" />
+            <f:selectItem itemLabel="February" itemValue="February" />
+            <f:selectItem itemLabel="March" itemValue="March" />
+            <f:selectItem itemLabel="April" itemValue="April" />
+            <f:selectItem itemLabel="May" itemValue="May" />
+        </p:selectOneMenu>
+        <p:outputLabel for="console2" value="Year:" style="font-weight: bold;"/>
+        <p:selectOneMenu id="console2" autoWidth="false" style="padding-right: 0px;;width:120px;" >
+            <f:selectItem itemLabel="2018" itemValue="2018" />
+            <f:selectItem itemLabel="2017" itemValue="2017" />
+            <f:selectItem itemLabel="2016" itemValue="2016" />
+            <f:selectItem itemLabel="2015" itemValue="2015" />
+        </p:selectOneMenu>
+        <p:button outcome="dashboard" icon="ui-icon-refresh" title="refresh">
+		</p:button>
+        </h:panelGrid>
+        <p:dashboard id="board" model="#{dashboardView.model}" >
+        	<p:panel id="NorthAmerica" header="North America">
+                <!-- <p:poll interval="15" update="votes2" />
+                <p:chart id="votes2" type="pie" model="#{chartView.livePieModel}" style="width:250px;height:250px"/> -->
+                <p:chart type="donut" model="#{chartView.donutModel}" style="width:250px;height:250px" />
+                <h:commandLink>Details</h:commandLink>
+            </p:panel>
+            <p:panel id="SouthAmerica" header="South America">
+                <!-- <p:poll interval="15" update="votes3" />
+                <p:chart id="votes3" type="pie" model="#{chartView.livePieModel}" style="width:250px;height:250px"/> -->
+                <p:chart type="donut" model="#{chartView.donutModel}" style="width:250px;height:250px" />
+                <h:commandLink>Details</h:commandLink>
+            </p:panel>
+ 
+            <p:panel id="Europe" header="Europe">
+                <!-- <p:poll interval="15" update="votes4"/>
+                <p:chart id="votes4" type="pie" model="#{chartView.livePieModel}" style="width:250px;height:250px"/> -->
+                <p:chart type="donut" model="#{chartView.donutModel}" style="width:250px;height:250px" />
+                <h:commandLink>Details</h:commandLink>
+            </p:panel>
+ 
+            <p:panel id="Asia" header="Asia">
+            	<!-- <p:poll interval="15" update="votes" />
+                <p:chart id="votes" type="pie" model="#{chartView.livePieModel}" style="width:250px;height:250px"/> -->
+                <p:chart type="donut" model="#{chartView.donutModel}" style="width:250px;height:250px" />
+                <h:commandLink>Details</h:commandLink>
+            </p:panel>
+ 
+            <p:panel id="Africa" header="Africa">
+               <!--  <p:poll interval="15" update="votes1" />
+                <p:chart id="votes1" type="pie" model="#{chartView.livePieModel}" style="width:250px;height:250px"/> -->
+                <p:chart type="donut" model="#{chartView.donutModel}" style="width:250px;height:250px" />
+                <h:commandLink>Details</h:commandLink>
+            </p:panel>
+            
+            <p:panel id="Australia" header="Australia">
+                <!-- <p:poll interval="15" update="votes5" />
+                <p:chart id="votes5" type="pie" model="#{chartView.livePieModel}" style="width:250px;height:250px"/> -->
+                <p:chart type="donut" model="#{chartView.donutModel}" style="width:250px;height:250px" />
+                <h:commandLink>Details</h:commandLink>
+            </p:panel>
+            
+            <p:panel id="Usa" header="Usa">
+                <!-- <p:poll interval="15" update="votes6" />
+                <p:chart id="votes6" type="pie" model="#{chartView.livePieModel}" style="width:250px;height:250px"/> -->
+                <p:chart type="donut" model="#{chartView.donutModel}" style="width:250px;height:250px" />
+                <h:commandLink>Details</h:commandLink>
+            </p:panel>
+            <p:panel id="Canada" header="Canada">
+                <!-- <p:poll interval="15" update="votes7" />
+                <p:chart id="votes7" type="pie" model="#{chartView.livePieModel}" style="width:250px;height:250px"/> -->
+                <p:chart type="donut" model="#{chartView.donutModel}" style="width:250px;height:250px" />
+                <h:commandLink>Details</h:commandLink>
+            </p:panel>
+        </p:dashboard>
+ 
+        <div style="clear:both" />
+    </h:form>
+	</div>
+	
+  </h:body>
+  </f:view>
+</html>

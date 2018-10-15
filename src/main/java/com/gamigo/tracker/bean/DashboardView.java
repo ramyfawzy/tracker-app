@@ -2,16 +2,18 @@ package com.gamigo.tracker.bean;
 
 
 import java.io.Serializable;
+
 import javax.annotation.PostConstruct;
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ViewScoped;
+import javax.enterprise.context.RequestScoped;
+import javax.inject.Named;
+
 import org.primefaces.model.DashboardColumn;
 import org.primefaces.model.DashboardModel;
 import org.primefaces.model.DefaultDashboardColumn;
 import org.primefaces.model.DefaultDashboardModel;
  
-@ManagedBean
-@ViewScoped
+@Named
+@RequestScoped
 public class DashboardView implements Serializable {
      
     /**
@@ -19,7 +21,7 @@ public class DashboardView implements Serializable {
 	 */
 	private static final long serialVersionUID = 7615378835594925800L;
 	private DashboardModel model;
-     
+	
     @PostConstruct
     public void init() {
         model = new DefaultDashboardModel();
@@ -27,24 +29,24 @@ public class DashboardView implements Serializable {
         DashboardColumn column2 = new DefaultDashboardColumn();
         DashboardColumn column3 = new DefaultDashboardColumn();
         DashboardColumn column4 = new DefaultDashboardColumn();
-         
-        column1.addWidget("Germany");
-        column1.addWidget("France");
-         
-        column2.addWidget("Italy");
-        column2.addWidget("Hungary");
-         
-        column3.addWidget("China");
-        column3.addWidget("Malaysia");
         
-        column1.addWidget("Usa");
-        column2.addWidget("Canada");
+        column1.addWidget("NorthAmerica");
+        column1.addWidget("Africa");
+         
+        column2.addWidget("Europe");
+        column2.addWidget("Australia");
+         
+        column3.addWidget("Asia");
+        
+        column4.addWidget("SouthAmerica");
  
         model.addColumn(column1);
         model.addColumn(column2);
         model.addColumn(column3);
         model.addColumn(column4);
     }
+    
+    
      
     /*public void handleReorder(DashboardReorderEvent event) {
         FacesMessage message = new FacesMessage();

@@ -5,13 +5,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
-import javax.faces.bean.ManagedBean;
 import javax.faces.context.FacesContext;
+import javax.faces.view.ViewScoped;
+import javax.inject.Named;
 
 import com.gamigo.tracker.model.Employee;
 
-@ManagedBean
-@javax.faces.bean.ViewScoped
+@Named
+@ViewScoped
 public class ViewEmployeesManagedBean implements Serializable{
 	/**
 	 * 
