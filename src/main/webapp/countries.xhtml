@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html  
+	xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+    xmlns:p="http://primefaces.org/ui" lang="en">
+
+   <h:head>
+
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+    <h:outputStylesheet name="css/main.css" />
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"/>
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <link rel="shortcut icon" type="image/x-icon" href="#{resource['images/favicon.ico']}"/>
+    <title>Countries</title>
+    <!-- Custom styles for this template -->
+    
+  </h:head>
+
+  <h:body>
+
+    <!-- Navigation -->
+     <h:form>
+    <nav id="banner" class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" >
+      <div class="container">
+     
+        <!-- <a class="navbar-brand" href="#">
+          <h:graphicImage name="images/logo.png" width="140" height="68" alt=""/>
+        </a> -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+             <h:commandLink styleClass="nav-link active" action="pretty:dashboard">Overview
+              <span class="sr-only">(current)</span>
+             </h:commandLink> 
+            </li>
+            <li class="nav-item">
+              <h:commandLink styleClass="nav-link" action="pretty:dashboard">Charts</h:commandLink> 
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Statistics</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">API</a>
+            </li>
+          </ul>
+        </div>
+        
+      </div>
+    </nav>
+    </h:form>
+	<div class="container-fluid">
+	
+    <h:form>	
+    
+		
+		
+		<div class="row">
+			<div class="col">
+				<h2 class="colHeader">Top Countries</h2>
+				<h3 class="progBarHeader">Germany</h3>
+				<p:progressBar value="#{continentView.progress}" labelTemplate="{value}%" displayOnly="true" />
+				<h3 class="progBarHeader">Spain</h3>
+				<p:progressBar value="#{continentView.progress}" labelTemplate="{value}%" displayOnly="true"/>
+				<h3 class="progBarHeader">Netherlands</h3>
+				<p:progressBar value="#{continentView.progress}" labelTemplate="{value}%" displayOnly="true"/>
+				
+			
+			</div>
+  			<div class="col">
+  			<h2 class="colHeader">All Countries</h2>
+  			<p:dataTable var="country" value="#{continentView.countries}" style="width: 100%;" rowStyleClass="#{country.percentage le 50 ? 'weak' : null}">
+			        <p:column headerText="Name" sortBy="#{country.name}">
+			            <h:outputText value="#{country.name}" />
+			        </p:column>
+			 
+			        <p:column headerText="Success" sortBy="#{country.successDownloads}">
+			            <h:outputText value="#{country.successDownloads}" />
+			        </p:column>
+			 
+			        <p:column headerText="Failed" sortBy="#{country.failDownloads}">
+			            <h:outputText value="#{country.failDownloads}" />
+			        </p:column>
+			 
+			        <p:column headerText="Rate" sortBy="#{country.percentage}">
+			            <h:outputText value="#{country.percentage}" />
+			        </p:column>
+			    </p:dataTable>
+  			</div>
+		</div>
+		<div class="row">
+		<div class="col">
+		   <div class="row">
+			<div class="box">
+			 <div class="knob-container  ui-corner-all">
+				<h4 style="text-align: center; color: #6f6f6f;">LC</h4>
+			 	<p:knob labelTemplate="{value}%" value="35" foregroundColor="#FBBB21" backgroundColor="#e3e3e3" step="1" disabled="true"/>
+			 </div>
+			</div>
+			<div class="box" style="padding-left: 4px;">
+			 <div class="knob-container  ui-corner-all">
+				<h4 style="text-align: center;color: #6f6f6f;">FO</h4>
+			 	<p:knob labelTemplate="{value}%" value="76" foregroundColor="#FBBB21" backgroundColor="#e3e3e3" step="1" disabled="true"/>
+			  </div>
+			 </div>
+			 <div class="box" style="padding-left: 4px;">
+			  <div class="knob-container  ui-corner-all">
+				<h4 style="text-align: center;color: #6f6f6f;">DPSH</h4>
+			 	<p:knob labelTemplate="{value}%" value="55" foregroundColor="#FBBB21" backgroundColor="#e3e3e3" step="1" disabled="true"/>
+			  </div>
+			 </div>
+			</div>
+		
+		</div>
+		<div class="col"></div>
+		
+		</div>
+		
+ 
+    </h:form>
+	</div>
+	
+  </h:body>
+</html>

@@ -33,15 +33,14 @@ navbar navbar-expand-lg navbar-dark bg-dark fixed-top bg-dark {
 	color: #FFFFFF;
 }
 
-/* .container-fluid {
-	margin-left: 16px!important;
-	margin-top: 45px!important;
+ .container-fluid {
+	padding-top: 15px!important;
 
-	} */
+	} 
 	.ui-widget,
 .ui-widget .ui-widget
 {
-    font-size: 75% !important;
+    /* font-size: 80% !important; */
     margin: 5px;
 }
 fixed-top {
@@ -51,4 +50,40 @@ fixed-top {
     height: 53px;
     left: 0;
     z-index: 1030;
+}
+.weak {
+	
+	background-color: #f0807d;
+}
+
+.ui-progressbar.ui-widget-content {
+	height: 48px;
+	
+}
+
+.ui-progressbar .ui-progressbar-value.ui-widget-header {
+	height: 48px;
+	background: none!important;
+	
+}
+.ui-progressbar-determinate .ui-progressbar-label {
+	/* height: 48px; */
+	padding-top: 1%;
+	
+}
+.ui-progressbar .ui-progressbar-value.ui-widget-header {
+	background-image: none!improtant;
+	background-color: #FBBB21!important;
+	
+}
+.ui-progressbar {
+	
+	color: #6f6f6f;
+}
+
+.colHeader {
+	color: #6f6f6f;
+}
+.progBarHeader {
+	color: #6f6f6f;
 }

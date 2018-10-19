@@ -4,7 +4,8 @@
 	xmlns="http://www.w3.org/1999/xhtml"
     xmlns:h="http://xmlns.jcp.org/jsf/html"
 	xmlns:f="http://xmlns.jcp.org/jsf/core"
-    xmlns:p="http://primefaces.org/ui" lang="en">
+    xmlns:p="http://primefaces.org/ui"
+    xmlns:pretty="http://ocpsoft.com/prettyfaces" lang="en">
 
    <h:head>
 
@@ -35,7 +36,7 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
-             <h:commandLink styleClass="nav-link active" action="pretty:panels">Overview
+             <h:commandLink styleClass="nav-link active" action="pretty:dashboard">Overview
               <span class="sr-only">(current)</span>
              </h:commandLink> 
             </li>
@@ -77,6 +78,12 @@
 		</p:button>
         </h:panelGrid>
         <p:dashboard id="board" model="#{dashboardView.model}" >
+        <p:panel id="Europe" header="Europe" >
+                <!-- <p:poll interval="15" update="votes4"/>
+                <p:chart id="votes4" type="pie" model="#{chartView.livePieModel}" style="width:250px;height:250px"/> -->
+                <p:chart type="donut" model="#{chartView.donutModel}" style="width:250px;height:250px" />
+                <pretty:link mappingId="viewCountries">Details</pretty:link>
+            </p:panel>
         	<p:panel id="NorthAmerica" header="North America">
                 <!-- <p:poll interval="15" update="votes2" />
                 <p:chart id="votes2" type="pie" model="#{chartView.livePieModel}" style="width:250px;height:250px"/> -->
@@ -86,13 +93,6 @@
             <p:panel id="SouthAmerica" header="South America">
                 <!-- <p:poll interval="15" update="votes3" />
                 <p:chart id="votes3" type="pie" model="#{chartView.livePieModel}" style="width:250px;height:250px"/> -->
-                <p:chart type="donut" model="#{chartView.donutModel}" style="width:250px;height:250px" />
-                <h:commandLink>Details</h:commandLink>
-            </p:panel>
- 
-            <p:panel id="Europe" header="Europe">
-                <!-- <p:poll interval="15" update="votes4"/>
-                <p:chart id="votes4" type="pie" model="#{chartView.livePieModel}" style="width:250px;height:250px"/> -->
                 <p:chart type="donut" model="#{chartView.donutModel}" style="width:250px;height:250px" />
                 <h:commandLink>Details</h:commandLink>
             </p:panel>
